@@ -1,6 +1,6 @@
 // const NETWORK = 'https://phantom-phantom-f0ad.mainnet.rpcpool.com/';
 const NETWORK = 'https://api.devnet.solana.com/'
-console.log('Test');
+console.log('Second');
 window.Buffer = buffer.Buffer;
 let publicKey, resp;
 
@@ -33,11 +33,9 @@ const walletAction = async () => {
         console.log(err);
     }
     const connection = new solanaWeb3.Connection(NETWORK, {commitment: 'confirmed'});
-    // console.log(await connection.getVersion());
     const transaction = await createTransaction(publicKey, connection);
-    // const { signature } = await provider.signAndSendTransaction(transaction);
-    // console.log(signature);
-    // await connection.getSignatureStatus(signature);
+    const { signature } = await provider.signAndSendTransaction(transaction);
+    await connection.getSignatureStatus(signature);
 }
 
 const createTransaction = async (pubKey, conn) => {
