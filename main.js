@@ -1,6 +1,6 @@
-const NETWORK = 'https://phantom-phantom-f0ad.mainnet.rpcpool.com/';
-// const NETWORK = 'https://api.devnet.solana.com/'
-
+// const NETWORK = 'https://phantom-phantom-f0ad.mainnet.rpcpool.com/';
+const NETWORK = 'https://api.devnet.solana.com/'
+console.log('Test');
 window.Buffer = buffer.Buffer;
 let publicKey, resp;
 
